@@ -338,7 +338,7 @@ function App() {
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 20 }}
                 src="https://github.com/RidoanDev.png"
-                alt="Professional headshot"
+                alt="Md Ridoan Mahmud Zisan"
                 className="w-48 h-48 rounded-full border-4 border-white shadow-lg"
               />
               <div>
@@ -1089,6 +1089,32 @@ function App() {
         ref={containerRef}
       >
         {/* Email Button - Animated */}
+        {isMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white px-3 py-1 rounded-full shadow-md text-sm font-medium text-gray-700 flex items-center gap-1"
+            >
+              <span>Chat with me</span>
+              <MessageCircle size={16} />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="bg-white px-3 py-1 rounded-full shadow-md text-sm font-medium text-gray-700 flex items-center gap-1 cursor-pointer"
+              onClick={() => setIsGhostOpen(!isGhostOpen)}
+            >
+              <span>Ghost</span>
+              <Ghost size={16} />
+            </motion.div>
+          </>
+        )}
+
+        {/* Email Button */}
         {isMenuOpen && (
           <motion.a
             href="#"
